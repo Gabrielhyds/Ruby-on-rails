@@ -10,3 +10,6 @@
 
 # os atributos são as caracteristicas
 
+#=====================================#
+
+## Obs: Uma classe instanciada é um objeto
