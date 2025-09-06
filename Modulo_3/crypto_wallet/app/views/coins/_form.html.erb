@@ -24,8 +24,9 @@
   <div>
     <%= form.label :url_image, style: "display: block" %>
     <%= form.text_field :url_image %>
+    <img src="<%= coin.url_image %>" width="50px" />
   </div>
-
+<br>
   <div>
     <%= form.submit %>
   </div>
