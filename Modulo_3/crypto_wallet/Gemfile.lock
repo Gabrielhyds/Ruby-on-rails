@@ -227,6 +227,10 @@ GEM
     stringio (3.1.7)
     thor (1.4.0)
     timeout (0.4.3)
+    tty-cursor (0.7.1)
+    tty-option (0.3.0)
+    tty-spinner (0.9.3)
+      tty-cursor (~> 0.7)
     turbo-rails (2.0.12)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
@@ -272,6 +276,8 @@ DEPENDENCIES
   sprockets-rails
   sqlite3 (~> 1.4)
   stimulus-rails
+  tty-option
+  tty-spinner
   turbo-rails
   tzinfo-data
   web-console
