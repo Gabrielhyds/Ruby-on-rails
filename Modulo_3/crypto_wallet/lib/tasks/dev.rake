@@ -15,7 +15,7 @@ namespace :dev do
       end
 
       `rails dev:add_coins`
-      `rails dev:add_minin_types`
+      `rails dev:add_mining_types`
     else
       puts 'A task só pode ser executada no ambiente de desenvolvimento'
     end
@@ -47,16 +47,16 @@ namespace :dev do
   end
 
   desc 'Cadastro os tipos de mineração'
-  task add_minin_types: :environment do
+  task add_mining_types: :environment do
     show_spinner('Cadastrando os tipos de mineração...') do
-      minin_types = [
-        { name: 'Prova de Trabalho', acronym: 'PoW' },
-        { name: 'Prova de Participação', acronym: 'PoS' },
-        { name: 'Prova de Participação Híbrida', acronym: 'PoW' }
+      mining_types = [
+        { description: 'Prova de Trabalho', acronym: 'PoW' },
+        { description: 'Prova de Participação', acronym: 'PoS' },
+        { description: 'Prova de Participação Híbrida', acronym: 'PoW' }
       ]
 
-      minin_types.each do |minin_type|
-        MininType.find_or_create_by!(minin_type)
+      mining_types.each do |mining_type|
+        MiningType.find_or_create_by!(mining_type)
       end
     end
   end
