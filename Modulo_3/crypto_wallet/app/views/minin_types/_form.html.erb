@@ -1,0 +1,27 @@
+<%= form_with(model: minin_type) do |form| %>
+  <% if minin_type.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(minin_type.errors.count, "error") %> prohibited this minin_type from being saved:</h2>
+
+      <ul>
+        <% minin_type.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :acronym, style: "display: block" %>
+    <%= form.text_field :acronym %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,2 @@
+class MininType < ApplicationRecord
+end

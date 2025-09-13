@@ -14,11 +14,50 @@ namespace :dev do
         `rails db:migrate`
       end
 
-      show_spinner('Populando DB...') do
-        `rails db:seed`
-      end
+      `rails dev:add_coins`
+      `rails dev:add_minin_types`
     else
       puts 'A task só pode ser executada no ambiente de desenvolvimento'
+    end
+  end
+  desc 'Cadastra as moedas padrão'
+  task add_coins: :environment do
+    show_spinner('Cadastrando as moedas...') do
+      coins = [
+        {
+          description: 'Bitcoin',
+          acronym: 'BTC',
+          url_image: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1.png'
+        },
+        {
+          description: 'Ethereum',
+          acronym: 'ETH',
+          url_image: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png'
+        },
+        {
+          description: 'Tether',
+          acronym: 'USDT',
+          url_image: 'https://s2.coinmarketcap.com/static/img/coins/64x64/825.png'
+        }
+      ]
+      coins.each do |coin|
+        Coin.find_or_create_by!(coin)
+      end
+    end
+  end
+
+  desc 'Cadastro os tipos de mineração'
+  task add_minin_types: :environment do
+    show_spinner('Cadastrando os tipos de mineração...') do
+      minin_types = [
+        { name: 'Prova de Trabalho', acronym: 'PoW' },
+        { name: 'Prova de Participação', acronym: 'PoS' },
+        { name: 'Prova de Participação Híbrida', acronym: 'PoW' }
+      ]
+
+      minin_types.each do |minin_type|
+        MininType.find_or_create_by!(minin_type)
+      end
     end
   end
 
