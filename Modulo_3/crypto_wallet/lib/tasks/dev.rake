@@ -14,11 +14,53 @@ namespace :dev do
         `rails db:migrate`
       end
 
-      show_spinner('Populando DB...') do
-        `rails db:seed`
-      end
+      `rails dev:add_mining_types`
+      `rails dev:add_coins`
     else
       puts 'A task só pode ser executada no ambiente de desenvolvimento'
+    end
+  end
+  desc 'Cadastra as moedas padrão'
+  task add_coins: :environment do
+    show_spinner('Cadastrando as moedas...') do
+      coins = [
+        {
+          description: 'Bitcoin',
+          acronym: 'BTC',
+          url_image: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1.png',
+          mining_type: MiningType.find_by(acronym: 'PoW') # aula 74
+        },
+        {
+          description: 'Ethereum',
+          acronym: 'ETH',
+          url_image: 'https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png',
+          mining_type: MiningType.all.sample # aula 74
+        },
+        {
+          description: 'Tether',
+          acronym: 'USDT',
+          url_image: 'https://s2.coinmarketcap.com/static/img/coins/64x64/825.png',
+          mining_type: MiningType.all.sample # aula 74
+        }
+      ]
+      coins.each do |coin|
+        Coin.find_or_create_by!(coin)
+      end
+    end
+  end
+
+  desc 'Cadastro os tipos de mineração'
+  task add_mining_types: :environment do
+    show_spinner('Cadastrando os tipos de mineração...') do
+      mining_types = [
+        { description: 'Prova de Trabalho', acronym: 'PoW' },
+        { description: 'Prova de Participação', acronym: 'PoS' },
+        { description: 'Prova de Participação Híbrida', acronym: 'PoW' }
+      ]
+
+      mining_types.each do |mining_type|
+        MiningType.find_or_create_by!(mining_type)
+      end
     end
   end
 
