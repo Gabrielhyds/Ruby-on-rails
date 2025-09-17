@@ -3,10 +3,10 @@
 <%= render @coin %>
 
 <div>
-  <%= link_to "Editar", edit_coin_path(@coin) %> |
-  <%= link_to "Voltar para a pagina inicial", coins_path %>
+  <%= link_to t('link.edit-moeda'), edit_coin_path(@coin) %> |
+  <%= link_to t('link.home'), coins_path %>
 </div>
 <div>
   <br>
-  <%= button_to "Excluir essa moeda", @coin, method: :delete %>
+  <%= button_to t('link.delete-moeda'), @coin, method: :delete %>
 </div>

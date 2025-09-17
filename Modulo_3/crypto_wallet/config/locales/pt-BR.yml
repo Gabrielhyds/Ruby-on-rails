@@ -1,0 +1,13 @@
+pt-BR:
+  hello: "Olá, Mundo!"
+  link:
+    edit-moeda: "Editar Esta Moeda"
+    show-moeda: "Mostrar Moeda"
+    delete-moeda: "Deletar Moeda"
+    back: "Voltar"
+    home: "Página Inicial"
+    new-moeda: "Nova moeda"
+    new-mining-type: "Novo tipo de mineração"
+    edit-mining-type: "Editar tipo de mineração"
+    show-mining-type: "Mostrar tipo de mineração"
+    delete-mining-type: "Deletar tipo de mineração:"

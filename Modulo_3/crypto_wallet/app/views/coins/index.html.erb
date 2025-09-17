@@ -6,9 +6,9 @@
   <% @coins.each do |coin| %>
     <%= render coin %>
     <p>
-      <%= link_to "Ver essa moeda", coin %>
+      <%= link_to t('link.show-moeda'), coin %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "Cadastrar nova moeda", new_coin_path %>
+<%= link_to t('link.new-moeda'), new_coin_path %>

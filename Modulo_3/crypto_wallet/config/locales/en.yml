@@ -31,3 +31,14 @@
 
 en:
   hello: "Hello world"
+  link:
+    edit: "Edit This Coin"
+    show: "Show Coin"
+    delete: "Delete Coin"
+    back: "Back"
+    home: "Home"
+    new-moeda: "New Coin"
+    new-mining-type: "New Mining Type"
+    edit-mining-type: "Edit Mining Type"
+    show-mining-type: "Show Mining Type"
+    delete-mining-type: "Delete Mining Type"
