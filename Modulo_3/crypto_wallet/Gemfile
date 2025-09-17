@@ -44,6 +44,7 @@ gem 'bootsnap', require: false
 
 gem 'pry-rails'
 
+gem 'rails-i18n', '~> 7.0.0'
 gem 'tty-option'
 gem 'tty-spinner'
 # Use Sass to process CSS

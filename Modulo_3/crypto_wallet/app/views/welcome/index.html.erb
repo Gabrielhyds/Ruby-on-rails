@@ -1,6 +1,7 @@
 <h1>Seja Bem-Vindo!</h1>
-<p> Data: <%= data_br(Date.today) %></p>
-
+<p>A idioma usado nessa aplicação é: <strong><%= locale %></strong></p>
+<p> Data: <%= I18n.l(Date.today) %></p>
+<p><%= I18n.t('hello') %></p>
 <%= render "menu" %> <!-- Aula 56-->
 
 <p>Você está em ambiente: <strong><%= ambientes_env %></strong></p> <!-- Aula 53-->
