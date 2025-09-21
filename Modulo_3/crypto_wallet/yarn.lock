@@ -5,17 +5,43 @@ __metadata:
   version: 8
   cacheKey: 10c0
 
+"bootstrap@npm:^5.3.8":
+  version: 5.3.8
+  resolution: "bootstrap@npm:5.3.8"
+  peerDependencies:
+    "@popperjs/core": ^2.11.8
+  checksum: 10c0/0039a9df2c3e7bfa04f1abca199c299ff3b75869d578c0cb1721c6f1f203c91531788a5631ecbee01513481979314d0e4ba0d90c2011e6ce18fc2e0bc93e18d9
+  languageName: node
+  linkType: hard
+
 "crypto_wallet@workspace:.":
   version: 0.0.0-use.local
   resolution: "crypto_wallet@workspace:."
   dependencies:
+    bootstrap: "npm:^5.3.8"
+    jquery: "npm:^3.7.1"
     notify-js-legacy: "npm:^0.4.1"
+    popper.js: "npm:^1.16.1"
   languageName: unknown
   linkType: soft
+
+"jquery@npm:^3.7.1":
+  version: 3.7.1
+  resolution: "jquery@npm:3.7.1"
+  checksum: 10c0/808cfbfb758438560224bf26e17fcd5afc7419170230c810dd11f5c1792e2263e2970cca8d659eb84fcd9acc301edb6d310096e450277d54be4f57071b0c82d9
+  languageName: node
+  linkType: hard
 
 "notify-js-legacy@npm:^0.4.1":
   version: 0.4.1
   resolution: "notify-js-legacy@npm:0.4.1"
   checksum: 10c0/d4f10f1cdde739689935ec43a585fe679ab6d8f64cd07a0f836adf06e29b25426f07c0a2d3e3f683a1a18b4ca08753905d9af54351d25652be5dcc930cff3fea
+  languageName: node
+  linkType: hard
+
+"popper.js@npm:^1.16.1":
+  version: 1.16.1
+  resolution: "popper.js@npm:1.16.1"
+  checksum: 10c0/1c1a826f757edb5b8c2049dfd7a9febf6ae1e9d0e51342fc715b49a0c1020fced250d26484619883651e097c5764bbcacd2f31496e3646027f079dd83e072681
   languageName: node
   linkType: hard

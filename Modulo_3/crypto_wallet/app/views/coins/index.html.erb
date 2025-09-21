@@ -1,14 +1,24 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Moedas Cadastradas</h1>
-
-<div id="coins">
-  <% @coins.each do |coin| %>
-    <%= render coin %>
-    <p>
-      <%= link_to t('link.show-moeda'), coin %>
-    </p>
+<div class="container mt-4">
+  <%# 1. Alerta de notificação com estilo Bootstrap %>
+  <% if notice %>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <%= notice %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
   <% end %>
-</div>
 
-<%= link_to t('link.new-moeda'), new_coin_path %>
+  <%# 2. Cabeçalho da página com título e botão alinhados %>
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="mb-0">Moedas Cadastradas</h1>
+    <%= link_to t('link.new-moeda'), new_coin_path, class: "btn btn-primary" %>
+  </div>
+
+  <%# 3. Grid responsivo para exibir os cards %>
+  <div id="coins" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    <% @coins.each do |coin| %>
+      <div class="col">
+        <%= render coin %>
+      </div>
+    <% end %>
+  </div>
+</div>

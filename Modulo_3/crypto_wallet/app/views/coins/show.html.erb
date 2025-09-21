@@ -1,12 +1,25 @@
-<p style="color: green"><%= notice %></p>
+<div class="container mt-4" style="max-width: 600px;">
 
-<%= render @coin %>
+  <%# 1. Alerta de notificação (padrão das outras telas) %>
+  <% if notice %>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <%= notice %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  <% end %>
 
-<div>
-  <%= link_to t('link.edit-moeda'), edit_coin_path(@coin) %> |
-  <%= link_to t('link.home'), coins_path %>
-</div>
-<div>
-  <br>
-  <%= button_to t('link.delete-moeda'), @coin, method: :delete %>
+  <%# 2. Renderiza o card da moeda que já foi estilizado %>
+  <%= render @coin %>
+
+  <%# 3. Seção de ações com botões estilizados e alinhados %>
+  <div class="mt-4 pt-4 border-top">
+    <div class="d-flex align-items-center gap-2">
+      <%= link_to t('link.edit-moeda'), edit_coin_path(@coin), class: "btn btn-warning" %>
+      <%= link_to t('link.home'), coins_path, class: "btn btn-outline-secondary" %>
+
+      <%# O botão de deletar é empurrado para a direita com a classe "ms-auto" %>
+      <%= button_to t('link.delete-moeda'), @coin, method: :delete, class: "btn btn-danger ms-auto", form: { data: { turbo_confirm: 'Você tem certeza?' } } %>
+    </div>
+  </div>
+
 </div>

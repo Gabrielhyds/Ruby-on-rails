@@ -12,3 +12,5 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w[welcome.css coins.css mining_types.css scaffolds.css]
 Rails.application.config.assets.precompile += %w[application.js cable.js welcome.js coins.js mining_types.js
                                                  scaffolds.js]
+
+Rails.application.config.assets.paths << Rails.root.join('node_modules')
