@@ -10,4 +10,5 @@ Rails.application.config.assets.version = '1.0'
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
 Rails.application.config.assets.precompile += %w[welcome.css coins.css mining_types.css scaffolds.css]
-Rails.application.config.assets.precompile += %w[cable.js welcome.js coins.js mining_types.js scaffolds.js]
+Rails.application.config.assets.precompile += %w[applications.js cable.js welcome.js coins.js mining_types.js
+                                                 scaffolds.js]
