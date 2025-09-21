@@ -6,6 +6,8 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require jquery
+//= require notifyjs
 //
 //
 // Esta linha mágica inclui todos os outros arquivos .js e .coffee desta pasta.
