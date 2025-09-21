@@ -1,17 +1,9 @@
-<p>
-  <%= link_to 'Português', root_path(locale: 'pt-BR')%>
-</p>
-<p>
-  <%= link_to 'Inglês', root_path(locale: 'en')%>
-</p>
-<h1>Seja Bem-Vindo!</h1>
-<p>A idioma usado nessa aplicação é: <strong><%= t('actual_locale') %></strong></p>
-<p> Data: <%= I18n.l(Date.today) %></p>
-<p><%= I18n.t('hello') %></p>
-<%= render "menu" %> <!-- Aula 56-->
-
-<p>Você está em ambiente: <strong><%= ambientes_env %></strong></p> <!-- Aula 53-->
-
-<p>eu sou uma variavel de instancia/sessao <strong><%= @meu_nome %></strong></p> <!-- Aula 53-->
-
-<p>Meu curso é o curso de:  <strong><%= @curso %></strong></p> <!-- Aula 53-->
+<div class="p-5 mb-4 bg-body-tertiary rounded-3">
+  <div class="container-fluid py-5">
+    <h1 class="display-5 fw-bold">Seja bem-vindo!</h1>
+    <p class="col-md-8 fs-4">Esse é o Crypto Wallet, um app para você cadastrar e acompanhar as suas criptomoedas.</p>
+    <hr class="my-4">
+    <p>Para começar, selecione uma das opções abaixo:</p>
+    <%= render "menu" %>
+  </div>
+</div>

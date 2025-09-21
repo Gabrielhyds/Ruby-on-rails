@@ -1,18 +1,22 @@
-<div id="<%= dom_id coin %>">
-  <p>
-    <strong><%= Coin.human_attribute_name(:description) %></strong>
-    <%= coin.description %>
-  </p>
+<div id="<%= dom_id coin %>" class="card h-100 shadow-sm">
+  <div class="card-header text-center">
+    <h5 class="card-title mb-0"><%= coin.description %></h5>
+  </div>
 
-  <p>
-    <strong><%= Coin.human_attribute_name(:acronym) %></strong>
-    <%= coin.acronym %>
-  </p>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      <strong><%= Coin.human_attribute_name(:acronym) %></strong>
+      <span class="badge bg-info text-dark"><%= coin.acronym %></span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      <strong><%= Coin.human_attribute_name(:url_image) %></strong>
+      <img src="<%= coin.url_image %>" width="35px" class="rounded-circle" alt="Logo <%= coin.description %>">
+    </li>
+  </ul>
 
-  <p>
-    <strong><%= Coin.human_attribute_name(:url_image) %></strong>
-    <img src="<%= coin.url_image %>" width="25px" />
-    <%#= image_tag @coin.url_image, size: "25x25"%>
-  </p>
-
+  <div class="card-footer text-center">
+    <div class="btn-group btn-group-sm" role="group">
+      <%= link_to t('link.show-moeda'), coin, class: "btn btn-outline-secondary" %>
+    </div>
+  </div>
 </div>

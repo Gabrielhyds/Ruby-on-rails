@@ -1,8 +1,8 @@
 <%= form_with(model: coin) do |form| %>
   <% if coin.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(coin.errors.count, "error") %> prohibited this coin from being saved:</h2>
-
+    <%# Usando o componente "Alert" do Bootstrap para erros %>
+    <div class="alert alert-danger">
+      <h4 class="alert-heading">Ocorreram <%= pluralize(coin.errors.count, "erro") %>:</h4>
       <ul>
         <% coin.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -11,27 +11,34 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_field :description %>
+  <%# Cada campo é envolvido por uma div com margem (mb-3) %>
+  <div class="mb-3">
+    <%= form.label :description, class: "form-label" %>
+    <%= form.text_field :description, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :acronym, style: "display: block" %>
-    <%= form.text_field :acronym %>
+  <div class="mb-3">
+    <%= form.label :acronym, class: "form-label" %>
+    <%= form.text_field :acronym, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :url_image, style: "display: block" %>
-    <%= form.text_field :url_image %>
-    <img src="<%= coin.url_image %>" width="50px" />
-  </div><br>
-  <div class="field">
-     <%= form.label :mining_type_id, style: "display: block"%>
-    <%= form.select("mining_type_id", @mining_type_options, { include_blank: 'Selecione' }) %>
+  <div class="mb-3">
+    <%= form.label :url_image, "URL da Imagem", class: "form-label" %>
+    <div class="d-flex align-items-center">
+      <%= form.text_field :url_image, class: "form-control" %>
+      <%# Mostra a imagem apenas se ela já existir %>
+      <% if coin.persisted? && coin.url_image.present? %>
+        <img src="<%= coin.url_image %>" class="img-thumbnail ms-3" width="50px" />
+      <% end %>
+    </div>
   </div>
-<br>
-  <div>
-    <%= form.submit %>
+
+  <div class="mb-3">
+    <%= form.label :mining_type_id, class: "form-label" %>
+    <%# Para o select, a classe correta é "form-select" %>
+    <%= form.select("mining_type_id", @mining_type_options, { include_blank: 'Selecione...' }, { class: "form-select" }) %>
   </div>
+
+  <%# Para o botão, usamos as classes "btn" %>
+  <%= form.submit "Salvar Moeda", class: "btn btn-primary" %>
 <% end %>
