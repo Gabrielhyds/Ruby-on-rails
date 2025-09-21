@@ -2,3 +2,7 @@
 # yarn lockfile v1
 
 
+notify-js-legacy@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.npmjs.org/notify-js-legacy/-/notify-js-legacy-0.4.1.tgz"
+  integrity sha512-v9tUdioFeizt2Y+wD9Vg4MWN8zbX5BTLfjHMO9UBKKLODZSsfnlV+MWONWVldB6sXqvg3AbaYB407WxnmYZk/g==

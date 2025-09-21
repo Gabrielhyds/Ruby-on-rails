@@ -7,8 +7,8 @@
 //= require activestorage
 //= require turbolinks
 //= require jquery
-//= require notifyjs
+//= require notify-js-legacy/notify
 //
 //
-// Esta linha mágica inclui todos os outros arquivos .js e .coffee desta pasta.
+
 

@@ -1,0 +1,7 @@
+{
+  "name": "crypto_wallet",
+  "packageManager": "yarn@4.9.2",
+  "dependencies": {
+    "notify-js-legacy": "^0.4.1"
+  }
+}
