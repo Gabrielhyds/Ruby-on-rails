@@ -1,9 +1,25 @@
-<p style="color: green"><%= notice %></p>
+<div class="d-flex align-items-center justify-content-center vh-100 bg-light">
+  <div id="<%= dom_id @mining_type %>" class="card shadow" style="width: 400px;">
+    <div class="card-header text-center">
+      <h5 class="card-title mb-0"><%= @mining_type.description %></h5>
+    </div>
 
-<%= render @mining_type %>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <strong><%= MiningType.human_attribute_name(:description) %></strong>
+        <span class="badge bg-primary"><%= @mining_type.description %></span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <strong><%= MiningType.human_attribute_name(:acronym) %></strong>
+        <span class="badge bg-info text-dark"><%= @mining_type.acronym %></span>
+      </li>
+    </ul>
 
-<div>
-  <%= link_to t('link.edit-mining-type'), edit_mining_type_path(@mining_type) %> |
-  <%= link_to t('link.show-mining-type'), @mining_type %> |
-  <%= button_to t('link.delete-mining-type'), @mining_type, method: :delete %>
+    <div class="card-footer text-center">
+      <div class="btn-group btn-group-sm" role="group">
+        <%= link_to t('link.edit'), edit_mining_type_path(@mining_type), class: "btn btn-outline-primary" %>
+        <%= link_to t('link.back'), mining_types_path, class: "btn btn-outline-dark" %>
+      </div>
+    </div>
+  </div>
 </div>

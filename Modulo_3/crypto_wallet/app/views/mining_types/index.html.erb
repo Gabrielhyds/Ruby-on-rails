@@ -1,14 +1,45 @@
-<p style="color: green"><%= notice %></p>
+<div class="container py-4">
 
-<h1>Mining types</h1>
-
-<div id="mining_types">
-  <% @mining_types.each do |mining_type| %>
-    <%= render mining_type %>
-    <p>
-      <%= link_to t('link.show-mining-type'), mining_type %>
-    </p>
+  <% if notice %>
+    <div class="alert alert-success">
+      <%= notice %>
+    </div>
   <% end %>
-</div>
 
-<%= link_to t('link.new-mining-type'), new_mining_type_path %>
+  <!-- Título e botão na mesma linha -->
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="mb-0">Tipos de Mineração</h1>
+    <%= link_to t('link.new-mining-type'), new_mining_type_path, class: "btn btn-success" %>
+  </div>
+
+  <div class="row g-3">
+    <% @mining_types.each do |mining_type| %>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-header text-center">
+            <h5 class="card-title mb-0"><%= mining_type.description %></h5>
+          </div>
+
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <strong><%= MiningType.human_attribute_name(:description) %></strong>
+              <span class="badge bg-primary"><%= mining_type.description %></span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <strong><%= MiningType.human_attribute_name(:acronym) %></strong>
+              <span class="badge bg-info text-dark"><%= mining_type.acronym %></span>
+            </li>
+          </ul>
+
+          <div class="card-footer text-center">
+            <div class="btn-group btn-group-sm" role="group">
+              <%= link_to t('link.show-mining-type'), mining_type, class: "btn btn-outline-secondary" %>
+              <%= link_to t('link.edit'), edit_mining_type_path(mining_type), class: "btn btn-outline-primary" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+</div>

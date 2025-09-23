@@ -9,7 +9,7 @@
 
   <%# 2. Cabeçalho da página com título e botão alinhados %>
   <div class="d-flex justify-content-between align-items-center mb-4">
-    <h1 class="mb-0">Moedas Cadastradas</h1>
+    <h1 class="mb-0"><%= Coin.model_name.human(count: 2)%></h1>
     <%= link_to t('link.new-moeda'), new_coin_path, class: "btn btn-primary" %>
   </div>
 

@@ -36,7 +36,9 @@ en:
   messages:
     welcome: "This is Crypto Wallet, an app for you to register and track your cryptocurrencies."
     menu: "To get started, select one of the options below:"
+    confirm: "Are you sure?"
   link:
+    save-coin: "Save Coin"
     edit-moeda: "Edit This Coin"
     show-moeda: "Show Coin"
     delete-moeda: "Delete Coin"
