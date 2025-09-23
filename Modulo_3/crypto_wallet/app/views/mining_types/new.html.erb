@@ -1,9 +1,13 @@
-<h1>New mining type</h1>
-
-<%= render "form", mining_type: @mining_type %>
-
-<br>
-
-<div>
-  <%= link_to t('link.back-mining-type'), mining_types_path %>
+<div class="d-flex align-items-center justify-content-center vh-100 bg-light">
+  <div class="card shadow" style="width: 400px;">
+    <div class="card-header text-center">
+      <h5 class="card-title mb-0"><%= t('titles.new-mining-type', default: "New Mining Type") %></h5>
+    </div>
+    <div class="card-body">
+      <%= render "form", mining_type: @mining_type %>
+    </div>
+    <div class="card-footer text-center">
+      <%= link_to t('link.back-mining-type'), mining_types_path, class: "btn btn-outline-dark btn-sm" %>
+    </div>
+  </div>
 </div>

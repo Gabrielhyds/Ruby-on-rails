@@ -1,10 +1,16 @@
-<h1>Editing mining type</h1>
-
-<%= render "form", mining_type: @mining_type %>
-
-<br>
-
-<div>
-  <%= link_to t('link.show-mining-type'), @mining_type %> |
-  <%= link_to t('link.back'), mining_types_path %>
+<div class="d-flex align-items-center justify-content-center vh-100 bg-light">
+  <div class="card shadow" style="width: 400px;">
+    <div class="card-header text-center">
+      <h5 class="card-title mb-0"><%= t('titles.edit-mining-type') %></h5>
+    </div>
+    <div class="card-body">
+      <%= render "form", mining_type: @mining_type %>
+    </div>
+    <div class="card-footer text-center">
+      <div class="btn-group btn-group-sm" role="group">
+        <%= link_to t('link.show-mining-type'), @mining_type, class: "btn btn-outline-secondary" %>
+        <%= link_to t('link.back'), mining_types_path, class: "btn btn-outline-dark" %>
+      </div>
+    </div>
+  </div>
 </div>

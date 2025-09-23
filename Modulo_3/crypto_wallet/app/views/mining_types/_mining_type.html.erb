@@ -1,12 +1,19 @@
-<div id="<%= dom_id mining_type %>">
-  <p>
-    <strong><%= MiningType.human_attribute_name(:description) %>:</strong>
-    <%= mining_type.description %>
-  </p>
+<div id="<%= dom_id mining_type %>" class="container py-4">
+  <div class="row text-center">
 
-  <p>
-    <strong><%= MiningType.human_attribute_name(:acronym) %>:</strong>
-    <%= mining_type.acronym %>
-  </p>
+    <div class="col-md-6 mb-3 mb-md-0">
+      <strong class="d-block text-secondary mb-1">
+        <%= MiningType.human_attribute_name(:description) %>:
+      </strong>
+      <span class="badge bg-primary fs-6"><%= mining_type.description %></span>
+    </div>
 
+    <div class="col-md-6">
+      <strong class="d-block text-secondary mb-1">
+        <%= MiningType.human_attribute_name(:acronym) %>:
+      </strong>
+      <span class="badge bg-info text-dark fs-6"><%= mining_type.acronym %></span>
+    </div>
+
+  </div>
 </div>
