@@ -38,6 +38,7 @@ en:
     menu: "To get started, select one of the options below:"
     confirm: "Are you sure?"
   link:
+
     save-coin: "Save Coin"
     edit-moeda: "Edit This Coin"
     show-moeda: "Show Coin"
